@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>L.U.N.A.R</title>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+    
+  <body>
+  <head>
+    <title>L.U.N.A.R. Visual Layout Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-satellite"></i> L.U.N.A.R. Visual Layout Tool</h1>
+        <p>Ferramenta de Planejamento e Simulação para o Artemis Base Camp</p>
+    </header>
+
+    <section id="phase1-container">
+        <h2>Passo 1: Seleção da Zona de Pouso</h2>
+        <p class="subtitle">Analise os dados coletados e selecione a zona mais estratégica para a sua base.</p>
+        <div class="zone-options-grid">
+            </div>
+    </section>
+
+    <section id="phase2-container" class="hidden">
+        <div class="phase2-header">
+            <h2>Passo 2: Design da Base Lunar</h2>
+            <button id="back-to-phase1-btn"><i class="fa-solid fa-arrow-left"></i> Voltar para Zonas</button>
+        </div>
+        <div class="layout-tool">
+            <div id="side-panel">
+                <h3>Módulos da Base</h3>
+                <button data-module="habitat" data-tooltip="Onde a tripulação vive, dorme e trabalha. O coração da base.">
+                    <i class="fa-solid fa-house-user"></i> Habitat de Superfície
+                </button>
+                <button data-module="airlock" data-tooltip="A 'porta de entrada/saída' para caminhadas espaciais.">
+                    <i class="fa-solid fa-door-open"></i> Módulo de Esclusa
+                </button>
+                <button data-module="power" data-tooltip="Gera e distribui energia para toda a base. Essencial para a sobrevivência.">
+                    <i class="fa-solid fa-solar-panel"></i> Usina de Energia
+                </button>
+                <button data-module="ltv" data-tooltip="Veículo aberto para exploração e transporte de curta distância.">
+                    <i class="fa-solid fa-car-side"></i> 'Jipe' Lunar (LTV)
+                </button>
+                <button data-module="isru" data-tooltip="Extrai recursos locais (água/oxigênio) para autossuficiência.">
+                    <i class="fa-solid fa-industry"></i> Unidade de ISRU
+                </button>
+                 <button data-module="pressurized-rover" data-tooltip="Veículo pressurizado para longas expedições científicas.">
+                    <i class="fa-solid fa-truck-monster"></i> Autocaravana Lunar
+                </button>
+              <button id="back-to-phase2-btn"><i class="fa-solid fa-trash-can"></i> Limpar modulos</button>
+            </div>
+            <div id="blueprint-area">
+                 <div id="blueprint-info"> arraste os módulos para cá </div>
+              
+            </div>
+            <div id="feedback-panel">
+                <h3><i class="fa-solid fa-chart-line"></i> Análise de Viabilidade</h3>
+                <p>Adicione módulos para iniciar a análise...</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
