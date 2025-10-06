@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>L.U.N.A.R</title>
-    <link rel="stylesheet" href="style.css">
-
-  </head>
-    
-  <body>
-  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L.U.N.A.R. Visual Layout Tool</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1><i class="fa-solid fa-satellite"></i> L.U.N.A.R. Visual Layout Tool</h1>
-        <p>Ferramenta de Planejamento e Simulação para o Artemis Base Camp</p>
-    </header>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <span>L.U.N.A.R. Swarm</span>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="equipe.html" class="navbar-brand">Team</a></li>
+        </ul>
+    </nav>
+
+    <div class="video-container" id="video-container">
+        <video width="100%" autoplay loop muted playsinline>
+            <source src="https://res.cloudinary.com/dzvdnisgk/video/upload/v1759645454/WhatsApp_Video_2025-10-04_at_23.29.06_l9d1sw.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    </div>
 
     <section id="phase1-container">
-        <h2>Passo 1: Seleção da Zona de Pouso</h2>
-        <p class="subtitle">Analise os dados coletados e selecione a zona mais estratégica para a sua base.</p>
+        <h2>Step 1: Landing Zone Selection</h2>
+        <p class="subtitle">Analyze the collected data and select the most strategic zone for your base.</p>
         <div class="zone-options-grid">
-            </div>
+        </div>
     </section>
 
     <section id="phase2-container" class="hidden">
         <div class="phase2-header">
-            <h2>Passo 2: Design da Base Lunar</h2>
-            <button id="back-to-phase1-btn"><i class="fa-solid fa-arrow-left"></i> Voltar para Zonas</button>
+            <h2>Step 2: Lunar Base Design</h2>
+            <button id="back-to-phase1-btn"><i class="fa-solid fa-arrow-left"></i> Back to Zones</button>
         </div>
         <div class="layout-tool">
             <div id="side-panel">
-                <h3>Módulos da Base</h3>
-                <button data-module="habitat" data-tooltip="Onde a tripulação vive, dorme e trabalha. O coração da base.">
-                    <i class="fa-solid fa-house-user"></i> Habitat de Superfície
-                </button>
-                <button data-module="airlock" data-tooltip="A 'porta de entrada/saída' para caminhadas espaciais.">
-                    <i class="fa-solid fa-door-open"></i> Módulo de Esclusa
-                </button>
-                <button data-module="power" data-tooltip="Gera e distribui energia para toda a base. Essencial para a sobrevivência.">
-                    <i class="fa-solid fa-solar-panel"></i> Usina de Energia
-                </button>
-                <button data-module="ltv" data-tooltip="Veículo aberto para exploração e transporte de curta distância.">
-                    <i class="fa-solid fa-car-side"></i> 'Jipe' Lunar (LTV)
-                </button>
-                <button data-module="isru" data-tooltip="Extrai recursos locais (água/oxigênio) para autossuficiência.">
-                    <i class="fa-solid fa-industry"></i> Unidade de ISRU
-                </button>
-                 <button data-module="pressurized-rover" data-tooltip="Veículo pressurizado para longas expedições científicas.">
-                    <i class="fa-solid fa-truck-monster"></i> Autocaravana Lunar
-                </button>
-              <button id="back-to-phase2-btn"><i class="fa-solid fa-trash-can"></i> Limpar modulos</button>
+                <h3>Base Modules</h3>
+
+                <details class="module-category">
+                    <summary>I. Habitation and Support</summary>
+                    <div class="module-buttons">
+                        <button data-module="alojamentos" data-tooltip="Accommodations for crew rest and privacy."><i class="fa-solid fa-bed"></i> Accommodations</button>
+                        <button data-module="estufa" data-tooltip="Cultivation of fresh food for self-sufficiency."><i class="fa-solid fa-leaf"></i> Orchard/Greenhouse</button>
+                        <button data-module="cozinha" data-tooltip="Food preparation and processing."><i class="fa-solid fa-utensils"></i> Food Preparation</button>
+                        <button data-module="refeitorio" data-tooltip="Common area for meals."><i class="fa-solid fa-people-group"></i> Mess Hall</button>
+                        <button data-module="higiene" data-tooltip="Sanitary and personal hygiene facilities."><i class="fa-solid fa-shower"></i> Hygiene/Locker Rooms</button>
+                        <button data-module="hub" data-tooltip="Command, monitoring, and planning center."><i class="fa-solid fa-display"></i> Central Hub</button>
+                        <button data-module="recreacao" data-tooltip="Area for relaxation and leisure activities."><i class="fa-solid fa-gamepad"></i> Living & Recreation</button>
+                        <button data-module="Energia" data-tooltip="Power and Maintenance Plant."><i class="fa-solid fa-solar-panel"></i> Power</button>
+                        <button data-module="medico" data-tooltip="Facilities for medical care and emergencies."><i class="fa-solid fa-kit-medical"></i> Medical Operations</button>
+                        <button data-module="quarentena" data-tooltip="Isolated area for quarantine of samples or personnel."><i class="fa-solid fa-biohazard"></i> Quarantine</button>
+                    </div>
+                </details>
+
+                <details class="module-category">
+                    <summary>II. Services and Control</summary>
+                    <div class="module-buttons">
+                        <button data-module="laboratorio" data-tooltip="Scientific analysis of geological and biological samples."><i class="fa-solid fa-flask"></i> Research Lab</button>
+                        <button data-module="telecom" data-tooltip="Communication with Earth and other outposts."><i class="fa-solid fa-satellite-dish"></i> Telecommunications</button>
+                        <button data-module="residuos" data-tooltip="Waste processing and recycling."><i class="fa-solid fa-recycle"></i> Waste Management</button>
+                        <button data-module="manutencao" data-tooltip="Workshop for equipment and tool repairs."><i class="fa-solid fa-screwdriver-wrench"></i> Maintenance & Repair</button>
+                        <button data-module="isru" data-tooltip="Extraction and utilization of local resources (e.g., ice)."><i class="fa-solid fa-industry"></i> ISRU Unit</button>
+                        <button data-module="armazenamento" data-tooltip="Storage for supplies, tools, and samples."><i class="fa-solid fa-box-archive"></i> Storage/Warehouse</button>
+                        <button data-module="suporte_eva" data-tooltip="Preparation for extravehicular activities (EVA)."><i class="fa-solid fa-person-walking-arrow-right"></i> EVA Support/Rovers</button>
+                    </div>
+                </details>
+                
+                <button id="clear-modules-btn"><i class="fa-solid fa-trash-can"></i> Clear Modules</button>
             </div>
             <div id="blueprint-area">
-                 <div id="blueprint-info"> arraste os módulos para cá </div>
-              
+                <div id="ring-guide-message" class="hidden"></div>
+                <div id="blueprint-info"> drag modules here </div>
             </div>
             <div id="feedback-panel">
-                <h3><i class="fa-solid fa-chart-line"></i> Análise de Viabilidade</h3>
-                <p>Adicione módulos para iniciar a análise...</p>
+                <h3><i class="fa-solid fa-chart-line"></i> Viability Analysis</h3>
+                <p>Add modules to start the analysis...</p>
             </div>
         </div>
     </section>
 
     <script src="script.js"></script>
-</body>
-    <script  src="./script.js"></script>
 
-  </body>
-  
+    <footer>
+        <p>© 2025 L.U.N.A.R. Swarm Team | A project for the NASA International Space Apps Challenge.</p>
+        <img src="imagens/ifc.png" alt="IFC CAMBORIÚ" width="10%">
+    </footer>
+
+</body>
 </html>
